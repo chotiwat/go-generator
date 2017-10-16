@@ -6,12 +6,10 @@ import (
 )
 
 func fib(yield YieldFunc) {
-	previous, current := 0, 1
-	yield(0)
-	yield(1)
+	current, next := 0, 1
 	for {
-		previous, current = current, previous+current
 		yield(current)
+		current, next = next, current+next
 	}
 }
 
